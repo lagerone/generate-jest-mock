@@ -1,0 +1,18 @@
+{
+  "env": {
+    "browser": false,
+    "node": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017
+  },
+  "plugins": ["prettier"],
+  "extends": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-unused-vars": 1,
+    "no-undef": 1,
+    "require-await": "error"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "generate-jest-mock",
+  "version": "0.0.0",
+  "description": "A command line tool for generating jest mocks",
+  "bin": "./lib/main.js",
+  "main": "lib/main.js",
+  "private": true,
+  "files": [
+    "/lib"
+  ],
+  "scripts": {
+    "start": "ts-node ./src/generate-jest-mock.ts",
+    "build": "npm run clean && tsc",
+    "version": "npm run build && git add -A lib",
+    "postversion": "git push && git push --tags",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "clean": "rm -rf ./lib",
+    "dev-link": "npm run build && npm link && npm link --local cli-subs",
+    "remove-link": "npm unlink --local cli-subs && npm unlink"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lagerone/cli-subs.git"
+  },
+  "author": "Daniel Lager <daniel.lager@gmail.com> (https://github.com/lagerone)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lagerone/cli-subs/issues"
+  },
+  "homepage": "https://github.com/lagerone/cli-subs#readme",
+  "devDependencies": {
+    "@types/fs-extra": "^7.0.0",
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.0.8",
+    "@types/prompts": "^2.0.1",
+    "eslint": "^5.16.0",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.17.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.2"
+  },
+  "dependencies": {
+    "fs-extra": "^8.0.1",
+    "prompts": "^2.1.0",
+    "winston": "^3.2.1"
+  }
+}

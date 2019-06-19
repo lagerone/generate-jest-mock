@@ -1,6 +1,6 @@
 {
   "name": "generate-jest-mock",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A command line tool for generating jest mocks",
   "bin": "./lib/main.js",
   "main": "lib/main.js",

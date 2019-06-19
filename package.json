@@ -4,7 +4,6 @@
   "description": "A command line tool for generating jest mocks",
   "bin": "./lib/main.js",
   "main": "lib/main.js",
-  "private": true,
   "files": [
     "/lib"
   ],

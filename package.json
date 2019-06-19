@@ -16,25 +16,26 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "clean": "rm -rf ./lib",
-    "dev-link": "npm run build && npm link && npm link --local cli-subs",
-    "remove-link": "npm unlink --local cli-subs && npm unlink"
+    "dev-link": "npm run build && npm link && npm link --local generate-jest-mock",
+    "remove-link": "npm unlink --local generate-jest-mock && npm unlink"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lagerone/cli-subs.git"
+    "url": "git+https://github.com/lagerone/generate-jest-mock.git"
   },
   "author": "Daniel Lager <daniel.lager@gmail.com> (https://github.com/lagerone)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lagerone/cli-subs/issues"
+    "url": "https://github.com/lagerone/generate-jest-mock/issues"
   },
-  "homepage": "https://github.com/lagerone/cli-subs#readme",
+  "homepage": "https://github.com/lagerone/generate-jest-mock#readme",
   "devDependencies": {
     "@types/fs-extra": "^7.0.0",
     "@types/jest": "^24.0.15",
     "@types/node": "^12.0.8",
     "@types/prompts": "^2.0.1",
     "eslint": "^5.16.0",
+    "jest": "^24.8.0",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.3.0",
     "tslint": "^5.17.0",

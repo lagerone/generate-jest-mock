@@ -6,13 +6,15 @@ import prompts from 'prompts';
 import { generateJestMock } from './generate-jest-mock';
 import { logger } from './logger';
 
+const JEST_MOCK_SUFFIX = 'mock';
+
 const run = async () => {
   const filenamesInCwd = await fse.readdir(process.cwd());
-  const validFilenames = filenamesInCwd.filter(
-    filename => filename.endsWith('.js') && !filename.endsWith('.mock.js')
+  const validFiles = filenamesInCwd.filter(filename =>
+    filename.endsWith('.js')
   );
 
-  if (!validFilenames.length) {
+  if (!validFiles.length) {
     logger.info(`No valid files found in "${process.cwd()}".`);
     process.exit(0);
   }
@@ -20,11 +22,12 @@ const run = async () => {
   const { selectedFilename } = await prompts({
     name: 'selectedFilename',
     message: 'Select file to mock',
-    type: 'autocomplete',
-    choices: validFilenames.map(file => {
+    type: 'select',
+    choices: validFiles.map(filename => {
       return {
-        title: file,
-        value: file,
+        title: `${filename}`,
+        value: filename,
+        disabled: filename.endsWith(`.${JEST_MOCK_SUFFIX}.js`),
       };
     }),
   });

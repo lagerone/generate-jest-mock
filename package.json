@@ -17,7 +17,7 @@
     "clean": "rm -rf ./lib",
     "dev-link": "npm run build && npm link && npm link --local generate-jest-mock",
     "remove-link": "npm unlink --local generate-jest-mock && npm unlink",
-    "reset": "npm run remove-link && npm uninstall generate-jest-mock && npm run dev-link"
+    "reset": "npm run remove-link && npm uninstall -g --save generate-jest-mock && npm run dev-link"
   },
   "repository": {
     "type": "git",

@@ -7,7 +7,7 @@ const renderDefaultMockImplementations = (functionNames: string[]) => {
     .map(fname => {
       return `mock.${fname}.mockImplementation(() => {
     // Enter default ${fname} implementation here
-    return null;
+    return undefined;
   });`;
     })
     .join('\n  ');

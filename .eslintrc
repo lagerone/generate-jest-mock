@@ -8,12 +8,23 @@
   "parserOptions": {
     "ecmaVersion": 2017
   },
+  "globals": {
+    "after": true,
+    "afterEach": true,
+    "before": true,
+    "beforeEach": true,
+    "describe": true,
+    "assert": true,
+    "expect": true,
+    "it": true,
+    "jest": true
+  },
   "plugins": ["prettier", "jest"],
   "extends": ["prettier"],
   "rules": {
     "prettier/prettier": "error",
     "no-unused-vars": 1,
     "no-undef": 1,
-    "require-await": "error"
+    "require-await": "warn"
   }
 }

@@ -31,7 +31,13 @@ const renderMockFunctions = (functionNames: string[]) => {
 export const generateJestMock = async (sourcePath: string) => {
   logger.debug(`Generating jest mock for source "${sourcePath}"...`);
 
-  const input = require(sourcePath);
+  let input: any;
+  try {
+    input = await import(sourcePath);
+  } catch (error) {
+    logger.error(error);
+    process.exit(1);
+  }
   const functionNames = Object.keys(input);
   const sourceFileName = path.parse(path.basename(sourcePath)).name;
   const outputFilePath = path.join(

@@ -1,4 +1,6 @@
 node_modules
 *.orig
 test-file.js
+test-file.ts
 test-file.mock.js
+test-file.mock.ts

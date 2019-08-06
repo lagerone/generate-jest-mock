@@ -7,11 +7,12 @@ import { generateJestMock } from './generate-jest-mock';
 import { logger } from './logger';
 
 const JEST_MOCK_SUFFIX = 'mock';
+const VALID_FILE_EXTENSIONS = ['.js', '.ts'];
 
 const run = async () => {
   const filenamesInCwd = await fse.readdir(process.cwd());
   const validFiles = filenamesInCwd.filter(filename =>
-    filename.endsWith('.js')
+    VALID_FILE_EXTENSIONS.includes(path.extname(filename))
   );
 
   if (!validFiles.length) {
@@ -27,7 +28,9 @@ const run = async () => {
       return {
         title: `${filename}`,
         value: filename,
-        disabled: filename.endsWith(`.${JEST_MOCK_SUFFIX}.js`),
+        disabled:
+          filename.endsWith(`.${JEST_MOCK_SUFFIX}.js`) ||
+          filename.endsWith(`.${JEST_MOCK_SUFFIX}.ts`),
       };
     }),
   });

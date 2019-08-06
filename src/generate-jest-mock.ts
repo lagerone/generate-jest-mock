@@ -36,7 +36,7 @@ export const generateJestMock = async (sourcePath: string) => {
   const sourceFileName = path.parse(path.basename(sourcePath)).name;
   const outputFilePath = path.join(
     path.dirname(sourcePath),
-    `${sourceFileName}.mock.js`
+    `${sourceFileName}.mock${path.extname(sourcePath)}`
   );
 
   const outputFileExists = await fse.pathExists(outputFilePath);

@@ -7,7 +7,7 @@ import { generateJestMock } from './generate-jest-mock';
 import { logger } from './logger';
 
 const JEST_MOCK_SUFFIX = 'mock';
-const VALID_FILE_EXTENSIONS = ['.js', '.ts'];
+const VALID_FILE_EXTENSIONS = ['.js'];
 
 const run = async () => {
   const filenamesInCwd = await fse.readdir(process.cwd());
